@@ -1,0 +1,244 @@
+/* ========================= */
+/* RESERVA SUSPENSIONES */
+/* ========================= */
+
+.booking-page{
+
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.82)),
+url('https://www.moto1pro.com/sites/default/files/detalle_3.jpg')
+center/cover no-repeat;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:140px 20px 80px;
+
+}
+
+/* TARJETA */
+
+.booking-card{
+
+width:100%;
+max-width:1300px;
+
+background:#121212;
+
+border-radius:25px;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+overflow:hidden;
+
+box-shadow:0 10px 50px rgba(0,0,0,.6);
+
+}
+
+/* IZQUIERDA */
+
+.booking-left{
+
+padding:60px;
+background:#181818;
+border-right:3px solid red;
+
+}
+
+.booking-left h1{
+
+font-size:4rem;
+color:red;
+margin-bottom:20px;
+font-weight:700;
+
+}
+
+.booking-left p{
+
+color:#ccc;
+font-size:1.1rem;
+line-height:1.8;
+margin-bottom:40px;
+
+}
+
+/* SERVICIOS */
+
+.service-options{
+
+display:flex;
+flex-direction:column;
+gap:25px;
+
+}
+
+.service-box{
+
+background:#222;
+padding:25px;
+border-radius:18px;
+
+transition:.3s;
+
+cursor:pointer;
+
+border:2px solid transparent;
+
+}
+
+.service-box:hover{
+
+transform:translateY(-5px);
+
+}
+
+.service-box.active{
+
+background:red;
+
+border:2px solid white;
+
+transform:scale(1.03);
+
+}
+
+.service-box h3{
+
+font-size:1.6rem;
+margin-bottom:10px;
+
+}
+
+.service-box p{
+
+color:#ddd;
+line-height:1.6;
+
+}
+
+.service-box.active p{
+
+color:white;
+
+}
+
+/* DERECHA */
+
+.booking-right{
+
+padding:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+/* FORMULARIO */
+
+.booking-form{
+
+width:100%;
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.booking-form input,
+.booking-form textarea{
+
+padding:18px;
+border:none;
+border-radius:12px;
+
+background:#1f1f1f;
+color:white;
+
+font-size:1rem;
+font-family:'Poppins', sans-serif;
+
+outline:none;
+
+}
+
+.booking-form textarea{
+
+height:160px;
+resize:none;
+
+}
+
+.booking-form button{
+
+padding:20px;
+border:none;
+border-radius:15px;
+
+background:red;
+color:white;
+
+font-size:1rem;
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 5px 20px rgba(255,0,0,.4);
+
+}
+
+.booking-form button:hover{
+
+background:white;
+color:black;
+transform:translateY(-5px);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.booking-card{
+
+grid-template-columns:1fr;
+
+}
+
+.booking-left{
+
+border-right:none;
+border-bottom:3px solid red;
+
+}
+
+.booking-left h1{
+
+font-size:3rem;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.booking-left,
+.booking-right{
+
+padding:35px;
+
+}
+
+.booking-left h1{
+
+font-size:2.3rem;
+
+}
+
+}
