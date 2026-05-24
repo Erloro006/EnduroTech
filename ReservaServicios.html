@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reserva Servicios | EnduroTech</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/reservaServicios.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo">
+<img src="Logo.png">
+</div>
+
+<nav class="menu">
+
+<a href="Index.html">Inicio</a>
+<a href="Servicios.html">Servicios</a>
+<a href="Suspensiones.html">Suspensiones</a>
+<a href="Lavado.html">Lavado</a>
+<a href="Preparacion.html">Preparación</a>
+<a href="Comunidad.html">Comunidad</a>
+<a href="Contacto.html">Contactanos</a>
+
+</nav>
+
+</header>
+
+<section class="booking-page">
+
+<div class="booking-card">
+
+<!-- IZQUIERDA -->
+
+<div class="booking-left">
+
+<h1>RESERVA TU SERVICIO</h1>
+
+<p>
+Selecciona el servicio específico para tu moto off-road.
+</p>
+
+<!-- CATEGORÍAS -->
+
+<div class="main-services">
+
+<div class="main-box active" data-category="mantenimiento">
+Mantenimiento
+</div>
+
+<div class="main-box" data-category="suspensiones">
+Suspensiones
+</div>
+
+<div class="main-box" data-category="preparacion">
+Preparación Off-Road
+</div>
+
+</div>
+
+<!-- SUBSERVICIOS -->
+
+<div class="sub-services" id="subServices">
+
+</div>
+
+</div>
+
+<!-- DERECHA -->
+
+<div class="booking-right">
+
+<form 
+class="booking-form"
+action="https://formsubmit.co/TUCORREO@gmail.com"
+method="POST"
+>
+
+<input 
+type="text"
+name="Nombre"
+placeholder="Nombre completo"
+required
+>
+
+<input 
+type="email"
+name="Correo"
+placeholder="Correo electrónico"
+required
+>
+
+<input 
+type="tel"
+name="Telefono"
+placeholder="Teléfono"
+required
+>
+
+<input 
+type="text"
+id="selectedService"
+name="Servicio"
+readonly
+required
+>
+
+<input 
+type="date"
+name="Fecha"
+required
+>
+
+<textarea 
+name="Detalles"
+placeholder="Describe el trabajo que necesitas"
+></textarea>
+
+<button type="submit">
+Solicitar Presupuesto
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 EnduroTech | Taller Off-Road Especializado</p>
+
+</footer>
+
+<script>
+
+const categories = document.querySelectorAll('.main-box');
+
+const subServices = document.getElementById('subServices');
+
+const selectedService = document.getElementById('selectedService');
+
+const services = {
+
+mantenimiento: [
+
+{
+title:'Cambio de Aceite y Filtros',
+desc:'Mantenimiento básico profesional para motocross.'
+},
+
+{
+title:'Kit de Transmisión',
+desc:'Cambio y ajuste de cadena, corona y piñón.'
+},
+
+{
+title:'Revisión Completa',
+desc:'Chequeo integral de motor, frenos y suspensiones.'
+}
+
+],
+
+suspensiones: [
+
+{
+title:'Horquillas',
+desc:'Cambio de aceite, retenes y ajuste técnico.'
+},
+
+{
+title:'Amortiguador',
+desc:'Configuración de rebote y compresión.'
+},
+
+{
+title:'Setup Completo',
+desc:'Preparación integral de suspensiones.'
+}
+
+],
+
+preparacion: [
+
+{
+title:'Preparación Enduro',
+desc:'Configuración técnica para enduro.'
+},
+
+{
+title:'Preparación Motocross',
+desc:'Preparación profesional para motocross.'
+},
+
+{
+title:'Diagnosis y Electrónica',
+desc:'Diagnóstico electrónico avanzado.'
+}
+
+]
+
+};
+
+function loadServices(category){
+
+subServices.innerHTML = '';
+
+services[category].forEach((service,index)=>{
+
+const div = document.createElement('div');
+
+div.classList.add('service-box');
+
+if(index === 0){
+
+div.classList.add('active');
+
+selectedService.value = service.title;
+
+}
+
+div.innerHTML = `
+
+<h3>${service.title}</h3>
+
+<p>${service.desc}</p>
+
+`;
+
+div.addEventListener('click',()=>{
+
+document.querySelectorAll('.service-box')
+.forEach(box=>box.classList.remove('active'));
+
+div.classList.add('active');
+
+selectedService.value = service.title;
+
+});
+
+subServices.appendChild(div);
+
+});
+
+}
+
+loadServices('mantenimiento');
+
+categories.forEach(category=>{
+
+category.addEventListener('click',()=>{
+
+categories.forEach(c=>c.classList.remove('active'));
+
+category.classList.add('active');
+
+loadServices(category.dataset.category);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

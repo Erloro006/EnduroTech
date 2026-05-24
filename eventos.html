@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eventos | EnduroTech</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/eventos.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo">
+<img src="Logo.png">
+</div>
+
+<nav class="menu">
+
+<a href="index.html">Inicio</a>
+<a href="servicios.html">Servicios</a>
+<a href="suspensiones.html">Suspensiones</a>
+<a href="lavado.html">Lavado</a>
+<a href="preparacion.html">Preparación</a>
+<a href="comunidad.html">Comunidad</a>
+<a href="eventos.html">Eventos</a>
+<a href="contacto.html">Contacto</a>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="eventos-hero">
+
+<div class="hero-content">
+
+<h1>RUTAS ENDURO</h1>
+
+<p>
+Explora senderos épicos, trialeras técnicas y rutas OFF-ROAD
+por Torrelles de Llobregat.
+</p>
+
+</div>
+
+</section>
+
+<!-- SELECTOR -->
+
+<section class="selector-section">
+
+<h2>¿Cuál es tu nivel?</h2>
+
+<div class="niveles">
+
+<button onclick="mostrarRuta('novato')">
+Novato
+</button>
+
+<button onclick="mostrarRuta('intermedio')">
+Intermedio
+</button>
+
+<button onclick="mostrarRuta('alto')">
+Alto
+</button>
+
+<button onclick="mostrarRuta('pro')">
+PRO
+</button>
+
+</div>
+
+<!-- NOVATO -->
+
+<div class="ruta" id="novato">
+
+<img src="principiante.jpg" class="ruta-img">
+
+<h3>🟢 Ruta Verde - Iniciación</h3>
+
+<p>
+Ruta ideal para principiantes. Caminos forestales anchos,
+subidas suaves y senderos fáciles por la zona baja de Torrelles.
+</p>
+
+<ul>
+
+<li>📍 Zona: Can Coll</li>
+<li>📏 Distancia: 18 km</li>
+<li>⛰ Dificultad: Baja</li>
+<li>🛞 Terreno: Tierra compacta</li>
+<li>⏱ Duración: 1h 30min</li>
+<li>🔥 Ideal para aprender</li>
+
+</ul>
+
+</div>
+
+<!-- INTERMEDIO -->
+
+<div class="ruta" id="intermedio">
+
+<img src="medio.jpg" class="ruta-img">
+
+<h3>🟠 Ruta Roja - Senderos Técnicos</h3>
+
+<p>
+Ruta por senderos entre bosque mediterráneo,
+con curvas cerradas y zonas de piedra suelta.
+</p>
+
+<ul>
+
+<li>📍 Zona: Sant Climent</li>
+<li>📏 Distancia: 34 km</li>
+<li>⛰ Dificultad: Media</li>
+<li>🛞 Terreno: Senderos y roca</li>
+<li>⏱ Duración: 2h 45min</li>
+<li>🔥 Ideal para mejorar técnica</li>
+
+</ul>
+
+</div>
+
+<!-- ALTO -->
+
+<div class="ruta" id="alto">
+
+<img src="dificil.jpg" class="ruta-img">
+
+<h3>🔴 Ruta Black Hill - Enduro Avanzado</h3>
+
+<p>
+Subidas agresivas, bajadas técnicas y trialeras
+por las montañas de Begues y Torrelles.
+</p>
+
+<ul>
+
+<li>📍 Zona: Begues</li>
+<li>📏 Distancia: 48 km</li>
+<li>⛰ Dificultad: Alta</li>
+<li>🛞 Terreno: Roca y barro</li>
+<li>⏱ Duración: 4h</li>
+<li>🔥 Solo pilotos experimentados</li>
+
+</ul>
+
+</div>
+
+<!-- PRO -->
+
+<div class="ruta" id="pro">
+
+<img src="pro.jpg" class="ruta-img">
+
+<h3>⚫ Ruta EXTREME PRO</h3>
+
+<p>
+La ruta más extrema de EnduroTech.
+Escalones naturales, barro profundo y trialeras cerradas.
+</p>
+
+<ul>
+
+<li>📍 Zona: Serra de l'Ordal</li>
+<li>📏 Distancia: 60 km</li>
+<li>⛰ Dificultad: EXTREMA</li>
+<li>🛞 Terreno: Trial extremo</li>
+<li>⏱ Duración: 5h+</li>
+<li>🔥 Solo nivel PRO</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 EnduroTech | Taller Off-Road Especializado
+</p>
+
+</footer>
+
+<script>
+
+const rutas = document.querySelectorAll('.ruta');
+
+function mostrarRuta(id){
+
+rutas.forEach(ruta => {
+ruta.style.display = 'none';
+});
+
+document.getElementById(id).style.display = 'block';
+
+}
+
+</script>
+
+</body>
+
+</html>

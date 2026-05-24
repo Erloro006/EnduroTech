@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reserva Suspensiones | EnduroTech</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/reservaSuspensiones.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo">
+<img src="Logo.png">
+</div>
+
+<nav class="menu">
+
+<a href="Index.html">Inicio</a>
+<a href="Servicios.html">Servicios</a>
+<a href="Suspensiones.html">Suspensiones</a>
+<a href="Lavado.html">Lavado</a>
+<a href="Preparacion.html">Preparación</a>
+<a href="Comunidad.html">Comunidad</a>
+<a href="Contacto.html">Contactanos</a>
+
+</nav>
+
+</header>
+
+<section class="booking-page">
+
+<div class="booking-card">
+
+<!-- IZQUIERDA -->
+
+<div class="booking-left">
+
+<h1>RESERVA SUSPENSIONES</h1>
+
+<p>
+Selecciona el servicio de suspensión que necesitas para tu moto off-road.
+</p>
+
+<div class="service-options">
+
+<div class="service-box active" data-service="Horquillas">
+
+<h3>Horquillas</h3>
+
+<p>
+Cambio de aceite, retenes y ajuste técnico.
+</p>
+
+</div>
+
+<div class="service-box" data-service="Amortiguador">
+
+<h3>Amortiguador</h3>
+
+<p>
+Configuración de rebote, compresión y precarga.
+</p>
+
+</div>
+
+<div class="service-box" data-service="Setup Completo">
+
+<h3>Setup Completo</h3>
+
+<p>
+Preparación integral para competición.
+</p>
+
+</div>
+
+<div class="service-box" data-service="Otro Servicio">
+
+<h3>Otro</h3>
+
+<p>
+Cualquier trabajo personalizado de suspensiones.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DERECHA -->
+
+<div class="booking-right">
+
+<form 
+class="booking-form"
+action="https://formsubmit.co/TUCORREO@gmail.com"
+method="POST"
+>
+
+<input 
+type="text"
+name="Nombre"
+placeholder="Nombre completo"
+required
+>
+
+<input 
+type="email"
+name="Correo"
+placeholder="Correo electrónico"
+required
+>
+
+<input 
+type="tel"
+name="Telefono"
+placeholder="Teléfono"
+required
+>
+
+<input 
+type="text"
+id="selectedService"
+name="Servicio"
+value="Horquillas"
+readonly
+required
+>
+
+<input 
+type="date"
+name="Fecha"
+required
+>
+
+<textarea 
+name="Detalles"
+placeholder="Describe el ajuste o problema"
+></textarea>
+
+<button type="submit">
+Reservar Ajuste
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 EnduroTech | Taller Off-Road Especializado</p>
+
+</footer>
+
+<script>
+
+const boxes = document.querySelectorAll('.service-box');
+
+const serviceInput = document.getElementById('selectedService');
+
+boxes.forEach(box => {
+
+box.addEventListener('click', () => {
+
+boxes.forEach(b => b.classList.remove('active'));
+
+box.classList.add('active');
+
+serviceInput.value = box.dataset.service;
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
